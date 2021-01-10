@@ -7,10 +7,25 @@ Have the function LongestWord(sen) take the sen parameter being passed and retur
 */
 
 function longestWord_2(sen) {
-  // YOUR CODE HERE
+  const noNeed = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,-.<>\/?~]/;
+  const wordsArr = sen.split(" ");
+  let str = "";
+  for (let i = 0; i < wordsArr.length; i++) {
+    const word = wordsArr[i].split("");
+    const count = word.length;
+    for (let i = 0; i < count; i++) {
+      if (noNeed.test(word[i])) {
+        word.splice(i, 1);
+      }  
+    }
+    if (str.length < word.join().length) {
+      str = word.join("");
+    }
+  }
+  return str;
 }
 
-/* 
+/*
 Examples:
 longestWord_2('lol!- time.'); // => 'time'
 longestWord_2('I** love, cats'); // => 'love'
