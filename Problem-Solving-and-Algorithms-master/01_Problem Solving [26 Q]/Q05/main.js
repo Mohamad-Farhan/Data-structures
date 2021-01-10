@@ -7,7 +7,20 @@ Have the function FindIntersection(strArr) read the array of strings stored in s
 */
 
 function findIntersection(strArr) {
-  // YOUR CODE HERE
+ let firstString = strArr[0]
+  let secondString = strArr[1]
+
+  let firstElementArray = []
+  let secondElementArray = []
+  firstString.split(',').map((oneNumber) => {
+    firstElementArray.push(Number(oneNumber))
+  })
+  secondString.split(',').map((oneNumber) => {
+    secondElementArray.push(Number(oneNumber))
+  })
+  let myAnswer = (secondElementArray.filter(e =>      
+   firstElementArray.includes(e))).toString()
+return myAnswer
   
 }
 
