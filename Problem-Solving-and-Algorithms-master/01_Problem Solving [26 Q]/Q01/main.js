@@ -8,9 +8,17 @@ Have the function LongestWord(sen) take the sen parameter being passed and retur
 
 function longestWord(sen) {
   // YOUR CODE HERE
+  let x = " ";
+  sen = sen.split(" ");
+  for (let i = 0; i < sen.length; i++) {
+    if (sen[i].length > x.length) {
+      x = sen[i];
+    }
+  }
+  return x;
 }
 
-/* 
+/*
 Examples:
 longestWord('lol time'); // => 'time'
 longestWord('I love cats'); // => 'love'
