@@ -14,10 +14,20 @@ If the username is valid then your program should return the string true, otherw
 */
 
 function usernameValidation(str) {
-  // YOUR CODE HERE
+  const p = /[!"#$%&'()*+,-./:;<=>?@[\]^`{|}~]/g;
+  const n = /[123456789_]/g;
+  const sp = str.search(p)
+  const sn = str[0].search(n)
+  if (sp === -1 && sn === -1 && (str[str.length - 1]) !== ""
+    && str.length > 4 && str.length < 25) {
+    return true
+  }
+  else {
+    return false
+  }
 }
 
-/* 
+/*
 Examples:
 usernameValidation('aa_'); // => false
 usernameValidation('u__hello_world123'); // => true
