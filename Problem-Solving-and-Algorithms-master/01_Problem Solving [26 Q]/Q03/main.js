@@ -7,7 +7,14 @@ Have the function FirstReverse(str) take the str parameter being passed and retu
 */
 
 function firstReverse(str) {
-  // YOUR CODE HERE
+  if (typeof str === 'string') {
+		const w = str.split(' ').reverse();
+		const reversedWords = w.map((w) => {
+			return w.split('').reverse().join('');
+		});
+		str = reversedWords.join('');
+		console.log(str);
+	} 
 }
 
 /* 
