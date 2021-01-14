@@ -6,7 +6,7 @@ console.log('Problem Solving Q: 10');
 Write a function that returns the number of occurrences of the most frequent character in a sentence.
 */
 
-function timesOfMostFreqChar(sentence) {
+function answer1(sentence) {
   let object = {};
   sentence.split("").forEach((c) => {
     if (object[c]) {
