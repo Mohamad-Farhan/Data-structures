@@ -6,14 +6,16 @@ console.log('Problem Solving Q: 11');
 Write a function that returns YES if a number is a power of 2, and NO otherwise.
 */
 
-function isPowerOfTwo() {
-  // YOUR CODE HERE
+function isPowerOfTwo(n) {
+  if (typeof n !== 'number')
+    return 'Not a number'
+  return n && (n & (n - 1)) === 0;
 }
 
-/* 
+/*
 Examples:
-isPowerOfTwo(0) // => 'NO'  
-isPowerOfTwo(1) // => 'YES'  
+isPowerOfTwo(0) // => 'NO'
+isPowerOfTwo(1) // => 'YES'
 // I am sure not a typo 1 => YES
 
 isPowerOfTwo(2) // => 'YES'
