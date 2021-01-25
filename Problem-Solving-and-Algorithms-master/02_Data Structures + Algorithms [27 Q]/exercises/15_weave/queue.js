@@ -7,15 +7,24 @@
 class Queue {
   constructor() {
     this.data = [];
+    this.i = 0
   }
 
   add(record) {
     this.data.unshift(record);
+    this.i++
   }
 
   remove() {
-    return this.data.pop();
+    if (this.data.length) {
+      this.i--
+      return this.data.pop();
+    }
   }
+  peek() {
+    return this.data[this.i - 1]
+  }
+
 }
 
 module.exports = Queue;
